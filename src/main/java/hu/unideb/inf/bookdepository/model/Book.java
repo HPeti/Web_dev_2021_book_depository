@@ -21,7 +21,7 @@ public class Book implements Serializable {
     private String publisher;
     @Column(nullable = false)
     private int price;
-    private Date releaseDate;
+    private String releaseDate;
     @Column(nullable = false, updatable = false)
     private String bookCode;
 
