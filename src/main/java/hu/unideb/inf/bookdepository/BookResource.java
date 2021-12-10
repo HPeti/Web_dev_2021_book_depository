@@ -4,6 +4,7 @@ import hu.unideb.inf.bookdepository.model.Book;
 import hu.unideb.inf.bookdepository.service.BookService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,6 +42,7 @@ public class BookResource {
         return new ResponseEntity<>(updatedBook, HttpStatus.OK);
     }
 
+    @Transactional
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteBook(@PathVariable("id") Long id) {
         bookService.deleteBook(id);
